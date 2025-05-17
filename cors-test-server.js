@@ -75,5 +75,5 @@ app.post('/api/users/login', (req, res) => {
 const PORT = 5001;
 app.listen(PORT, () => {
   console.log(`CORS Test Server running on port ${PORT}`);
-  console.log(`Test URL: http://localhost:${PORT}/api/test`);
+  console.log(`Test URL: hhttps://erm-server.onrender.com:${PORT}/api/test`);
 });
