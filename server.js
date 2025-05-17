@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // Allow CORS from any origin in development mode
 app.use(cors({
-  origin: '*', // Allow all origins in development
+  origin: 'https://erm-client.vercel.app', // Allow all origins in development
   credentials: false, // Set to false when using '*' for origin
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
