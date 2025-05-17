@@ -1,0 +1,39 @@
+import express from 'express';
+import {
+  getTasks,
+  getTasksByProject,
+  getTasksByEmployee,
+  createTask,
+  updateTask,
+  deleteTask,
+  getTaskById,
+  assignTask,
+  updateTaskStatus
+} from '../controllers/taskController.js';
+import { protect, admin } from '../../middleware/authMiddleware.js';
+
+const router = express.Router();
+
+// Task routes
+router.route('/')
+  .get(protect, getTasks)
+  .post(protect, admin, createTask);
+
+router.route('/:id')
+  .get(protect, getTaskById)
+  .put(protect, admin, updateTask)
+  .delete(protect, admin, deleteTask);
+
+router.route('/project/:projectId')
+  .get(protect, getTasksByProject);
+
+router.route('/employee/:employeeId')
+  .get(protect, getTasksByEmployee);
+
+router.route('/:id/assign')
+  .put(protect, admin, assignTask);
+
+router.route('/:id/status')
+  .put(protect, updateTaskStatus);
+
+export default router;
