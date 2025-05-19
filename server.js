@@ -14,6 +14,7 @@ import teamRoutes from './routes/teamRoutes.js';
 import activityRoutes from './routes/activityRoutes.js';
 import projectRoutes from './routes/projectRoutes.js';
 import taskRoutes from './routes/taskRoutes.js';
+import contactRoutes from './routes/contactRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -57,6 +58,7 @@ app.use('/api/teams', teamRoutes);
 app.use('/api/activities', activityRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/tasks', taskRoutes);
+app.use('/api/contacts', contactRoutes);
 
 // Base route
 app.get('/', (req, res) => {
@@ -78,3 +80,5 @@ process.on('unhandledRejection', (err) => {
   // Close server & exit process
   process.exit(1);
 });
+
+
